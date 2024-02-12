@@ -1,8 +1,5 @@
-import os
 import pytest
-import re
 from playwright.sync_api import Playwright, sync_playwright, expect
-from pom.common import passed
 from pom.nintendo.Home_Page import HomePage
 from pom.nintendo.Product_Page import ProductPage
 from pom.nintendo.AddToCart_Page import AddToCartPage
@@ -12,6 +9,7 @@ from pom.nintendo.Checkout_Page import CheckoutPage
 # Create a .env file and store variable there and the .gitignore uses this as a reference in GitHub Actions
 # PASSWORD = os.environ['PASSWORD']
 
+# **** Standard ****
 # # PASSWORD = Below will take the secret from either the 'utils' or from 'GitHub' secrets as _
 # # _ local or remote execution of the tests.
 # try:
@@ -59,9 +57,6 @@ def test_add_physical_game_to_cart(set_up) -> None:
     expect(checkoutpage.txtEstimatedTotal).to_be_visible()
     expect(checkoutpage.txtEstimatedTotalPrice).to_be_visible()
 
-    # --End Test-------------------
-    passed.Passed_Test.print_nintendo_logo()
-
 
 @pytest.mark.regression
 @pytest.mark.parametrize("merchandise, qty, price",
@@ -105,6 +100,3 @@ def test_add_swag_to_cart(set_up, merchandise, qty, price) -> None:
     expect(checkoutpage.txtEstimatedTaxPrice).to_be_visible()
     expect(checkoutpage.txtEstimatedTotal).to_be_visible()
     expect(page.get_by_text(price, exact=True).nth(3)).to_be_visible()
-
-    # --End Test-------------------
-    passed.Passed_Test.print_nintendo_logo()

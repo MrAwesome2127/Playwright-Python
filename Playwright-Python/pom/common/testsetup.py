@@ -3,12 +3,26 @@ from datetime import datetime
 
 class TestSetup:
     @staticmethod
-    def create_date_folder(record_video_dir):
+    def create_video_folder(record_video_dir):
         # Get current date
         current_date = datetime.now().strftime("%m-%d-%Y")
 
         # Create folder with current date
         folder_path = os.path.join(record_video_dir, current_date)
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+            print(f"Folder '{current_date}' created successfully at '{folder_path}'")
+        else:
+            print(f"Folder '{current_date}' already exists at '{folder_path}'")
+        return folder_path
+
+    @staticmethod
+    def create_screenshot_folder(screenshot_dir):
+        # Get current date
+        current_date = datetime.now().strftime("%m-%d-%Y")
+
+        # Create folder with current date
+        folder_path = os.path.join(screenshot_dir, current_date)
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
             print(f"Folder '{current_date}' created successfully at '{folder_path}'")
