@@ -7,7 +7,7 @@ from pom.common.testsetup import TestSetup
 @pytest.fixture(scope='function') # session - Keeps test running on the same window
 def set_up(playwright):
     # --Start Test-------------------
-    browser = playwright.chromium.launch(headless=False)  # slow_mo=500 if you need to slowdown
+    browser = playwright.chromium.launch(headless=True)  # slow_mo=500 if you need to slowdown
     record_video_dir = "../results/videos/nintendo/"
     # screenshot_dir = "../results/screenshots/nintendo/"
     video_folder_path = TestSetup.create_video_folder(record_video_dir)
