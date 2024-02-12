@@ -63,7 +63,7 @@ def test_add_swag_to_cart(set_up, merchandise, qty, price) -> None:
     homepage.ddlSearchCategories.click()
     homepage.txtMerchandise.click()
     homepage.btnSearch.click()
-    homepage.fldSearch.fill(merchandise, timeout=400)
+    homepage.fldSearch.fill(merchandise)
     page.get_by_label(merchandise, exact=True).click()
 
     # --Product Page-------------------
