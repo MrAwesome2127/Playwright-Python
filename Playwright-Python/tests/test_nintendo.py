@@ -15,7 +15,7 @@ def test_add_physical_game_to_cart(set_up) -> None:
     # --Home Page-------------------
     homepage = HomePage(page)
     homepage.btnSearch.click()
-    homepage.fldSearch.fill("Legend of Zelda", timeout=200)
+    homepage.fldSearch.fill("Legend of Zelda")
     homepage.imgLegendOfZelda.click()
 
     # --Product Page-------------------
