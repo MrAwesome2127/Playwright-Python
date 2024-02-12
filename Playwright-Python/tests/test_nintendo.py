@@ -10,7 +10,7 @@ from pom.nintendo.Checkout_Page import CheckoutPage
 
 # **** Industry Standard ****
 # Create a .env file and store variable there and the .gitignore uses this as a reference in GitHub Actions
-PASSWORD = os.environ['PASSWORD']
+# PASSWORD = os.environ['PASSWORD']
 
 # # PASSWORD = Below will take the secret from either the 'utils' or from 'GitHub' secrets as _
 # # _ local or remote execution of the tests.
