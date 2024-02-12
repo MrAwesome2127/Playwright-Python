@@ -31,7 +31,7 @@ jobs:
         python -m pip install playwright
         
     - name: Ensure Playwright browsers are installed
-      run: python -m playwright install
+      run: python -m playwright install chromium
         
     - name: Lint with flake8
       run: |
