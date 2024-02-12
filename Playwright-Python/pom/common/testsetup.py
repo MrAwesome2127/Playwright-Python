@@ -1,5 +1,4 @@
 import os
-import pyautogui
 from datetime import datetime
 
 class TestSetup:
@@ -28,13 +27,13 @@ class TestSetup:
         # Format the filename
         filename = f"{current_time}-{test_name}.webm"
         return filename
-
-    @staticmethod
-    def is_object_visible(image_path):
-        position = pyautogui.locateOnScreen(image_path)
-
-        # If object is found (visible), return True
-        if position:
-            return True
-        else:
-            return False
+    #
+    # @staticmethod
+    # def is_object_visible(image_path):
+    #     position = pyautogui.locateOnScreen(image_path)
+    #
+    #     # If object is found (visible), return True
+    #     if position:
+    #         return True
+    #     else:
+    #         return False
