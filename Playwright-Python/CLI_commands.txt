@@ -1,0 +1,15 @@
+open test browser (Record/Playback)
+playwright codegen <URL>
+
+execute scenarios using markers
+pytest -m <MarkerName>
+
+execute scenarios excluding markers
+pytest -m 'not <MarkerName>'
+
+Parallel execution
+pytest -n <NumberOfCPU>
+pytest -n auto
+
+Let's put it together!!!
+pytest --headed --slowmo=400 --video=retain-on-failure --screenshot=only-on-failure -n 3
